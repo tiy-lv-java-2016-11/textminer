@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class ExtractionTests {
 
-    Extraction e = new Extraction();
+    private Extraction e = new Extraction();
 
     @Test
     public void testExtractPhoneNumbers(){
@@ -61,6 +61,10 @@ public class ExtractionTests {
         assertEquals("https://www.reddit.com/r/LifeProTips/", urls.get(0));
         assertEquals("http://foo.org/r/photoshopbattles/", urls.get(1));
     }
+
+    /* ******************************************
+     * HARD MODE
+     * ******************************************/
 
     @Test
     public void textExtractEmails(){
