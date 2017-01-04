@@ -54,15 +54,15 @@ public class ValidationTest {
 
     @Test
     public void testPhone(){
-        assertTrue(v.phone_number("919-555-1212"));
-        assertTrue(v.phone_number("(919) 555-1212"));
-        assertTrue(v.phone_number("9195551212"));
-        assertTrue(v.phone_number("919.555.1212"));
-        assertTrue(v.phone_number("919 555-1212"));
-        assertFalse(v.phone_number(""));
-        assertFalse(v.phone_number("555-121"));
-        assertFalse(v.phone_number("1212"));
-        assertFalse(v.phone_number("mobile"));
+        assertTrue(v.phone("919-555-1212"));
+        assertTrue(v.phone("(919) 555-1212"));
+        assertTrue(v.phone("9195551212"));
+        assertTrue(v.phone("919.555.1212"));
+        assertTrue(v.phone("919 555-1212"));
+        assertFalse(v.phone(""));
+        assertFalse(v.phone("555-121"));
+        assertFalse(v.phone("1212"));
+        assertFalse(v.phone("mobile"));
     }
 
     @Test
