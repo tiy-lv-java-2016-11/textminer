@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by jeff on 1/4/17.
@@ -13,6 +15,12 @@ public class Extraction {
      */
     public List<String> extractPhoneNumbers(String input){
         List<String> phones = new ArrayList<String>();
+        Pattern p = Pattern.compile("\\(\\d{3}\\)\\s\\d{3}-\\d{4}");
+        Matcher m = p.matcher(input);
+
+        while (m.find()){
+            phones.add(m.group());
+        }
 
         return phones;
     }
@@ -24,6 +32,12 @@ public class Extraction {
      */
     public List<String> extractUrls(String input){
         List<String> urls = new ArrayList<String>();
+        Pattern p = Pattern.compile("(?:href=\")([\\w:/.]+)");
+        Matcher m = p.matcher(input);
+
+        while (m.find()){
+            urls.add(m.group(1));
+        }
 
         return urls;
     }
@@ -40,6 +54,13 @@ public class Extraction {
      */
     public List<String> extractEmails(String input){
         List<String> emails = new ArrayList<String>();
+        Pattern p = Pattern.compile("\\s(\\w+(?:\\.\\w+)?@\\w+\\.\\w+)\\s");
+        Matcher m = p.matcher(input);
+
+        while (m.find()){
+            emails.add(m.group(1));
+        }
+
 
         return emails;
     }

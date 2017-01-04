@@ -80,6 +80,7 @@ public class ValidationTest {
         assertFalse(v.zipCode("8029-3924"));
     }
 
+    @Test
     public void testEmail(){
         assertTrue(v.email("stroman.azariah@yahoo.com"));
         assertTrue(v.email("viola91@gmail.com"));
@@ -96,6 +97,7 @@ public class ValidationTest {
         assertFalse(v.email("bonita43@"));
     }
 
+    @Test
     public void testAddress(){
         assertTrue(v.address("368 Agness Harbor\nPort Mariah, MS 63293"));
         assertTrue(v.address("96762 Juluis Road Suite 392\nLake Imogenemouth, AK 20211"));
