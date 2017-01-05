@@ -30,7 +30,7 @@ public class ExtractionTests {
 
     @Test
     public void textExtractUrls(){
-        String input = "<a href=\"https://www.reddit.com/r/LifeProTips/\" class=\"choice\" >LifeProTips</a></li>" +
+        String input = "a href=\\\"https://www.reddit.com/r/LifeProTips/\\\" class=\\\"choice\\\" >LifeProTips</a></li><" +
                 "<li ><span class=\"separator\">-</span><a href=\"http://foo.org/r/photoshopbattles/\" " +
                 "class=\"choice\" >photoshopbattles</a></li><li ><span class=\"separator\">-</span>" +
                 "<a href=\"https://www.reddit.com/r/nottheonion/\" class=\"choice\" >nottheonion</a></li>" +
