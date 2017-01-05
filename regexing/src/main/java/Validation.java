@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by jeff on 1/4/17.
  */
@@ -9,7 +12,9 @@ public class Validation {
      * @return
      */
     public boolean binary(String input){
-        return true;
+        Pattern p = Pattern.compile("[01]+");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -18,7 +23,9 @@ public class Validation {
      * @return
      */
     public boolean binary_even(String input){
-        return true;
+        Pattern p = Pattern.compile("[01]+0$");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -27,7 +34,9 @@ public class Validation {
      * @return
      */
     public boolean hexadecimal(String input){
-        return true;
+        Pattern p = Pattern.compile("[A-F0-9]+");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -36,7 +45,9 @@ public class Validation {
      * @return
      */
     public boolean word(String input){
-        return true;
+        Pattern p = Pattern.compile("\\d*[A-z-]+");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -45,7 +56,9 @@ public class Validation {
      * @return
      */
     public boolean phone(String input){
-        return true;
+        Pattern p = Pattern.compile("(?:\\(?(\\d{3})\\)?[-\\s.]?)?(\\d{3})[-\\s.]?(\\d{4})");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -54,7 +67,9 @@ public class Validation {
      * @return
      */
     public boolean zipCode(String input){
-        return true;
+        Pattern p = Pattern.compile("\\d{5}(-\\d{4})?$");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**************************************************************
