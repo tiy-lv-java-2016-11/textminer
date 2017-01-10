@@ -11,19 +11,9 @@ public class Validation {
      * @return
      */
     public boolean binary(String input) {
-        Validation v = new Validation();
         Pattern p = Pattern.compile("[01]+");
         Matcher m = p.matcher(input);
-        if (m.matches()) {
-            m.find();
-            if (m.find() == m.matches()) {}
-                return true;
-
-            } else {
-
-
-                return m.matches();
-            }
+       return m.matches();
         }
 
 
@@ -33,18 +23,9 @@ public class Validation {
      * @return
      */
     public boolean binary_even(String input) {
-        Validation v = new Validation();
-        Pattern p = Pattern.compile("0$");
+        Pattern p = Pattern.compile("[01]+0$");
         Matcher m = p.matcher(input);
-        if (m.matches()) {
-            m.find();
-            if (m.find() == m.matches()) {
-                return true;
-            } else {
-                return m.matches();
-            }
-        }
-    return m.matches();
+        return m.matches();
     }
 
 
@@ -54,7 +35,9 @@ public class Validation {
      * @return
      */
     public boolean hexadecimal(String input){
-        return true;
+        Pattern p = Pattern.compile("[A-F0-9]+");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -63,7 +46,9 @@ public class Validation {
      * @return
      */
     public boolean word(String input){
-        return true;
+        Pattern p = Pattern.compile("\\d*[A-z-]+");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -72,7 +57,9 @@ public class Validation {
      * @return
      */
     public boolean phone(String input){
-        return true;
+        Pattern p = Pattern.compile("\\(?(\\d{3})\\)?[\\-\\s\\.]?(\\d{3})[\\-\\s\\.]?(\\d{4})");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**
@@ -81,7 +68,9 @@ public class Validation {
      * @return
      */
     public boolean zipCode(String input){
-        return true;
+        Pattern p = Pattern.compile("(\\d{5})(-?\\d{4})?");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 
     /**************************************************************
